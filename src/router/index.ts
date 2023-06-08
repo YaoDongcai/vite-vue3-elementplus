@@ -6,6 +6,13 @@ const routers: readonly RouteRecordRaw[] = [{
         title: '登录'
     },
     component: () => import('@/views/login.vue')
+}, {
+    path: '/home',
+    name:'Home',
+    meta: {
+        title: '主页'
+    },
+    component: () => import('@/views/home.vue')
 }]
 const router = createRouter({
     routes: routers,
