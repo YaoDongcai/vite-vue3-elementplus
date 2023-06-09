@@ -20,7 +20,7 @@
                     </el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" @click="submitForm(loginForm)">
+                    <el-button class="login-form-submit-btn" type="primary" @click="submitForm(loginForm)">
                         登录
                     </el-button>
                 </el-form-item>
@@ -76,3 +76,34 @@ const submitForm = (formEl: FormInstance | undefined) => {
     })
 }
 </script>
+
+<style lang="less" scoped>
+.login-wrapp {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/img/login-bg.jpg);
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .center-login {
+        padding: 10px 10px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        .login-title {
+            text-align: center;
+            font-size: 28px;
+
+        }
+        .login-form {
+            padding-top: 23px;
+            width: 100%;
+            .login-form-submit-btn {
+                width: 100%;
+            }
+        }
+    }
+}
+</style>
