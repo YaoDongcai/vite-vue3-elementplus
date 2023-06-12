@@ -32,6 +32,9 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
 import { Lock, User } from '@element-plus/icons-vue';
+import {
+    usePermissStore
+} from '@/store/permiss'
 import { useRouter } from 'vue-router' 
 import {
     FormRules,
@@ -60,6 +63,7 @@ const param = reactive<LoginInfo>({
     password: "123456",
 })
 const router = useRouter();
+const permiss = usePermissStore();
 // 登录提交
 const submitForm = (formEl: FormInstance | undefined) => {
     if(!formEl) return;
@@ -67,13 +71,15 @@ const submitForm = (formEl: FormInstance | undefined) => {
         if(valid) {
             ElMessage.success('登录成功');
             localStorage.setItem('ms_username', param.username);
-
+            const keys = permiss.defaultList[param.username == 'admin' ? 'admin': 'user']
+            // set permiss
+            permiss.handleSet(keys);
             router.push('/home')
         }else {
             ElMessage.error('登录失败')
             return false;
         }
-    })
+    }) 
 }
 </script>
 
