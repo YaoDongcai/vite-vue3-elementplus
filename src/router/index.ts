@@ -12,7 +12,15 @@ const routers: readonly RouteRecordRaw[] = [{
     meta: {
         title: '主页'
     },
-    component: () => import('@/views/home.vue')
+    component: () => import('@/views/home.vue'),
+    children: [{
+        path: '/dashboard',
+        name:'Dashboard',
+        meta: {
+            title: '首页'
+        },
+        component: () => import('@/views/dashboard.vue')
+    }]
 }]
 const router = createRouter({
     routes: routers,
