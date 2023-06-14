@@ -36,7 +36,7 @@ import DSidebar from "@/components/sidebar.vue"
     left: 250px;
     width: calc(100% - 250px);
     height: calc(100% - 70px );
-    background-color: black;
+    background-color: white;
   }
 }
 </style>

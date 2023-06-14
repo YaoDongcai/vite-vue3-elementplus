@@ -20,6 +20,13 @@ const routers: readonly RouteRecordRaw[] = [{
             title: '首页'
         },
         component: () => import('@/views/dashboard.vue')
+    },{
+        path: '/form',
+        name:'Form',
+        meta: {
+            title: '表单'
+        },
+        component: () => import('@/views/form.vue')
     }]
 }]
 const router = createRouter({
