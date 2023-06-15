@@ -38,7 +38,7 @@ const collapseChange = () => {
 .header {
   display: flex;
   position: relative;
-  height: 70px;
+  height: 40px;
   width: 100%;
 
   color: #fff;

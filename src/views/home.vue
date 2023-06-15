@@ -2,8 +2,10 @@
   <div class="home-container">
     <!--  header -->
     <d-header></d-header>
+    <d-tags></d-tags>
     <!-- sidebar -->
     <d-sidebar></d-sidebar>
+
     <!--  this is a content-box  -->
     <div class="content-box">
       <!-- tags -->
@@ -23,6 +25,7 @@
 <script lang="ts" setup>
 import DHeader from "@/components/header.vue"
 import DSidebar from "@/components/sidebar.vue"
+import DTags from '@/components/tags.vue'
 </script>
 
 <style lang="less" scoped>
